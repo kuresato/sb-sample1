@@ -1,0 +1,14 @@
+div.a {
+    font-size: 72pt;
+    color: white;
+    background-color: red;
+    text-align: center;
+    width: 80pt
+}
+div.b {
+    font-size: 72pt;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    width: 80pt
+}
