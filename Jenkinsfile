@@ -22,7 +22,17 @@ pipeline {
                 sh 'mvn clean package'
             }
        }
-       stage('Results') {
+        stage('Analyze') {
+            steps {
+                script {
+                    def sonarqubeScannerHome = tool name: 'sonar-3.0.3', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    echo "${sonarqubeScannerHome}"
+                    sh "ls -la ${sonarqubeScannerHome}/bin"
+                    sh "${sonarqubeScannerHome}/bin/sonar-scanner --version"
+                }
+            }
+       }
+        stage('Results') {
             steps {
                 junit '**/target/surefire-reports/TEST-*.xml'
                 archive 'target/*.jar'
