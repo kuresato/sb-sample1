@@ -32,9 +32,8 @@ pipeline {
                 //}
 
                 //sh 'mvn -Dsonar.host.url=${SONAR_URL} -Dmaven.test.failure.ignore=true clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar'
-                echo "hello world !"
-                echo "sonar server = ${SONAR_HOST_URL}"
-                sh 'mvn -Dsonar.host.url=${SONAR_HOST_URL} -Dmaven.test.failure.ignore=true org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar'
+                echo "${SONAR_HOST_URL}"
+                sh "mvn -Dsonar.host.url=${SONAR_HOST_URL} -Dmaven.test.failure.ignore=true org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar"
             }
        }
         stage('Results') {
