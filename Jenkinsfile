@@ -11,7 +11,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 // git branch: 'master', credentialsId: 'xxxx', url: 'https://xxxxxx/xxxxx/xxxx/xxxx.git'
-                git scm
+                // git scm
             }
         }
        stage('Build') {
